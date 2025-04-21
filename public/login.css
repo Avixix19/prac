@@ -1,0 +1,145 @@
+/* Base Reset and Font */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+}
+  
+  body {
+    background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: #fff;
+    position: relative;
+}
+  
+  /* Top-right Button (used for Login/Signup toggle) */
+  .signup {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.signup button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00fff7, #00c3ff);
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00fff7;
+  transition: all 0.3s ease;
+}
+
+.signup button:hover {
+  background: linear-gradient(135deg, #00c3ff, #00fff7);
+  box-shadow: 0 0 25px #00fff7;
+  transform: scale(1.05);
+}
+
+.signup button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px #00b8ff;
+}
+
+/* Form Container */
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.01);
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: #00fff7;
+}
+
+/* Form Input Styling */
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.guess {
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #00fff7;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.guess::placeholder {
+  color: #aaa;
+}
+
+.guess:focus {
+  outline: none;
+  border-color: #00ffb3;
+  box-shadow: 0 0 10px #00ffb3;
+}
+
+/* Submit Button */
+.submit {
+  padding: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #00fff7, #00c3ff);
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00fff7;
+  transition: all 0.3s ease;
+}
+
+.submit:hover {
+  background: linear-gradient(135deg, #00c3ff, #00fff7);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00fff7;
+}
+
+.submit:active {
+  transform: scale(0.96);
+  box-shadow: 0 0 15px #00b8ff;
+}
+
+  /* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+      padding: 2.5rem 2rem;
+    }
+  
+    .signup button {
+      font-size: 1rem;
+    }
+  
+    .guess, .submit {
+      font-size: 1.05rem;
+    }
+}
+  

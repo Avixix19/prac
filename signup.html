@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup | Logo Guess Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/login.css">
+</head>
+<body>
+
+  <!-- Optional: Back to Login button -->
+
+  <div class="container">
+    <h2>Create Account</h2><br>
+    <form action="/signup" method="POST">
+      <div>
+        <input class="guess" type="email" name="email" placeholder="Email" required>
+        <input class="guess" type="password" name="password" placeholder="Password" required>
+        <input class="guess" type="password" name="confirmPassword" placeholder="Confirm Password" required>
+        <button type="submit" class="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

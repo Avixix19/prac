@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Logo Game</title>
+</head>
+<body>
+  <div class="screenshot-blocker"></div>
+  <div class="container">
+    <% if (gameOver) { %>
+      <h2>🛑 Game Over!</h2>
+      <p>Your final score was: <strong><%= totalScore %></strong></p>
+
+      <% if (topPlayer && topPlayer.email) { %> 
+        <div class="top-player-section">
+          <h3>🏆 All-Time Top Player:</h3>
+          <p><strong>Name/Email: </strong><%= topPlayer.email %></p>
+          <p><strong>High Score: </strong><%= topPlayer.highscore %></p>
+        </div>
+      <% } %>
+
+
+      <form action="/restart" method="post">
+        <button class="submit" type="submit">Play Again</button>
+      </form>
+    <% } else { %>
+      <form action="/submit" method="post">
+        <div class="score-lives">
+          <h3>Total Score: <span><%= totalScore %></span></h3>
+          <h3>Lives: <span><%= lives %></span></h3>
+        </div>
+
+        <img id="logoim" src="/Logos/<%= question.filename %>" alt="logo"/>
+
+        <div>
+          <input type="text" name="answer" class="guess" placeholder="Enter your guess here" required />
+        </div>
+
+        <button type="submit" class="submit">Submit</button>
+      </form>
+    <% } %>
+  </div>
+</body>
+<script>
+  history.pushState(null, "", location.href);
+  window.onpopstate = function () {
+    history.pushState(null, "", location.href);
+  };
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+        document.body.style.backgroundColor = "black"; // Make the screen black
+    } else {
+        document.body.style.backgroundColor = ""; // Restore normal view
+    }
+});
+</script>
+</html>
